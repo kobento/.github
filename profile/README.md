@@ -52,10 +52,10 @@ data driven by the clock, all in a few kilobytes, and they adapt from a phone to
 [Play with them](https://mcp.kobento.dev/showcases/).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kobento/.github/main/profile/images/displays.png" alt="A watch face with steps and battery, a live home-energy Sankey diagram, and a patient monitor with ECG, pleth and respiration traces" width="100%">
+  <img src="https://raw.githubusercontent.com/kobento/.github/main/profile/images/displays.png" alt="A split-flap departure board, a live home-energy Sankey diagram, and a patient monitor with ECG, pleth and respiration traces" width="100%">
 </p>
 
-They aren't just phone screens: watch faces, dashboards, wall displays and instruments are
+They aren't just phone screens: departure boards, dashboards, wall displays and instruments are
 documents too.
 
 ## Ask, then ship
