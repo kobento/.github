@@ -100,7 +100,8 @@ press **Remix** and have their assistant build their own version.
 ```mermaid
 flowchart LR
   subgraph Write
-    MCP[kobento-mcp<br/>MCP servers, components,<br/>examples, the site]
+    %% kobento-mcp is private for now: put this node and its edge back when it is public.
+    %% MCP[kobento-mcp<br/>MCP servers, components,<br/>examples, the site]
     TOOLS[kobento-tools<br/>json2rc, inspector,<br/>renderers, apps]
   end
   RC((.rc<br/>document))
@@ -112,7 +113,7 @@ flowchart LR
     MCU[kobento-mcu<br/>ESP32, STM32, Pi]
   end
   NET[kobento-net<br/>push to a display]
-  MCP --> RC
+  %% MCP --> RC
   TOOLS --> RC
   RC --> TS
   RC --> LIBS
@@ -124,7 +125,6 @@ flowchart LR
 
 | Repository | What's in it |
 | :--- | :--- |
-| [**kobento-mcp**](https://github.com/kobento/kobento-mcp) | The MCP servers your assistant talks to, the component library, the example catalog, and the [website](https://mcp.kobento.dev/). |
 | [**kobento-libs**](https://github.com/kobento/kobento-libs) | The C++ engine: it parses, lays out and runs a document, and paints through Skia, Core Graphics or ThorVG. Includes 3D. |
 | [**kobento-ts**](https://github.com/kobento/kobento-ts) | The TypeScript engine and the web player that every published page embeds. |
 | [**kobento-tools**](https://github.com/kobento/kobento-tools) | `json2rc` (JSON to `.rc`, byte for byte as Android's parser writes it), the inspector, the renderers, Lottie and vector-drawable converters, conformance tests, and the Android and iOS showcase apps. |
@@ -132,6 +132,10 @@ flowchart LR
 | [**kobento-ios**](https://github.com/kobento/kobento-ios) | The engine built for iPhone and iPad (Skia on Metal, or Core Graphics without Skia) and a viewer. |
 | [**kobento-mcu**](https://github.com/kobento/kobento-mcu) | The microcontroller player: M5Stack Tab5, Core2 and PaperS3, Waveshare round LCD and AMOLED, Elecrow CrowPanels, with touch, knobs, buttons and e-paper. Also STM32U5 and Raspberry Pi. |
 | [**kobento-net**](https://github.com/kobento/kobento-net) | Delivery over the local network: a tiny HTTP and mDNS protocol, with clients in Python, TypeScript and C++ and a reference receiver. |
+
+<!-- kobento-mcp is private for now: put this row back (first in the table) when it is public.
+| [**kobento-mcp**](https://github.com/kobento/kobento-mcp) | The MCP servers your assistant talks to, the component library, the example catalog, and the [website](https://mcp.kobento.dev/). |
+-->
 
 ## Write it by hand
 
@@ -154,9 +158,12 @@ git clone https://github.com/kobento/kobento-tools
 node kobento-tools/json2rc/build/cli.js screen.json screen.rc   # Node.js only, no install step
 ```
 
-Every example on [the site](https://mcp.kobento.dev/demos/) shows its JSON, and the
-[component guide](https://github.com/kobento/kobento-mcp/blob/main/docs/COMPONENT_AUTHORING.md)
-explains how to write your own components, or a whole new look for the library.
+Every example on [the site](https://mcp.kobento.dev/demos/) shows its JSON. To write your own
+components, or a whole new look for the library, ask your assistant for the component guide: the
+MCP server's `reference` tool has it.
+<!-- kobento-mcp is private for now. When it is public, back to: "Every example on the site shows
+its JSON, and the [component guide](https://github.com/kobento/kobento-mcp/blob/main/docs/COMPONENT_AUTHORING.md)
+explains how to write your own components, or a whole new look for the library." -->
 
 ## Status
 
